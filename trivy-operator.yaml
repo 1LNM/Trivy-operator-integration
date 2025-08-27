@@ -1225,10 +1225,10 @@ data:
   trivy.useBuiltinRegoPolicies: "true"
   trivy.supportedConfigAuditKinds: "Workload,Service,Role,ClusterRole,NetworkPolicy,Ingress,LimitRange,ResourceQuota"
   trivy.timeout: "5m0s"
-  trivy.resources.requests.cpu: 500m
-  trivy.resources.requests.memory: 500M
-  trivy.resources.limits.cpu: 1Gi
-  trivy.resources.limits.memory: 1Gi
+  trivy.resources.requests.cpu: 100m
+  trivy.resources.requests.memory: 100M
+  trivy.resources.limits.cpu: 500m
+  trivy.resources.limits.memory: 500M
 ---
 # Source: trivy-operator/templates/deployment.yaml
 apiVersion: apps/v1
@@ -1265,7 +1265,7 @@ spec:
             - name: OPERATOR_NAMESPACE
               value: "trivy-system"
             - name: OPERATOR_TARGET_NAMESPACES
-              value: "default,local-test-env"
+              value: ""
             - name: OPERATOR_EXCLUDE_NAMESPACES
               value: "kube-system,trivy-system"
             - name: OPERATOR_TARGET_WORKLOADS
@@ -1293,7 +1293,7 @@ spec:
             - name: OPERATOR_VULNERABILITY_SCANNER_ENABLED
               value: "true"
             - name: OPERATOR_VULNERABILITY_SCANNER_SCAN_ONLY_CURRENT_REVISIONS
-              value: "false"
+              value: "true"
             - name: OPERATOR_VULNERABILITY_SCANNER_REPORT_TTL
               value: "24h"
             - name: OPERATOR_CONFIG_AUDIT_SCANNER_ENABLED
