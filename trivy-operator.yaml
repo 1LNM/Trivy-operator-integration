@@ -1281,9 +1281,9 @@ spec:
             - name: OPERATOR_SCAN_JOB_RETRY_AFTER
               value: "30s"
             - name: OPERATOR_BATCH_DELETE_LIMIT
-              value: "10"
+              value: "1000"
             - name: OPERATOR_BATCH_DELETE_DELAY
-              value: "10s"
+              value: "1000s"
             - name: OPERATOR_METRICS_BIND_ADDRESS
               value: ":8080"
             - name: OPERATOR_METRICS_FINDINGS_ENABLED
