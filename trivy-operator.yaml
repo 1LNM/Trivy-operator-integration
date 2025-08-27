@@ -1265,7 +1265,7 @@ spec:
             - name: OPERATOR_NAMESPACE
               value: "trivy-system"
             - name: OPERATOR_TARGET_NAMESPACES
-              value: ""
+              value: "default,local-test-env"
             - name: OPERATOR_EXCLUDE_NAMESPACES
               value: "kube-system,trivy-system"
             - name: OPERATOR_TARGET_WORKLOADS
